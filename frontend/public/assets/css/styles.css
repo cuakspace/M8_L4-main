@@ -1,0 +1,171 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #263238;
+  background: #f3f5f4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.contenedor {
+  width: min(100% - 32px, 960px);
+  margin: 40px auto;
+}
+
+header {
+  margin-bottom: 28px;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+.etiqueta {
+  color: #19765a;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.panel {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px #21372f14;
+  margin-bottom: 24px;
+  padding: 24px;
+}
+
+form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.formulario-autor {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 500px;
+}
+
+label {
+  min-width: 0;
+}
+
+input {
+  min-width: 0;
+  width: 100%;
+}
+
+label {
+  display: grid;
+  gap: 7px;
+  font-weight: 700;
+  min-width: 0;
+}
+
+input,
+select {
+  border: 1px solid #b9c5c1;
+  border-radius: 7px;
+  font: inherit;
+  min-width: 0;
+  padding: 10px;
+  width: 100%;
+}
+
+button {
+  background: #19765a;
+  border: 0;
+  border-radius: 7px;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  padding: 9px 14px;
+}
+
+button:hover {
+  filter: brightness(0.9);
+}
+
+.secundario {
+  background: #64736e;
+}
+
+.peligro {
+  background: #b93b3b;
+}
+
+.acciones-formulario {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 10px;
+}
+
+.encabezado-lista {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border-bottom: 1px solid #e0e6e3;
+  padding: 12px 8px;
+  text-align: left;
+}
+
+.acciones-tabla {
+  display: flex;
+  gap: 8px;
+}
+
+.portada {
+  border-radius: 5px;
+  display: block;
+  height: 80px;
+  object-fit: cover;
+  width: 56px;
+}
+
+.mensaje {
+  margin: 16px 0 0;
+  min-height: 20px;
+}
+
+.exito {
+  color: #116149;
+}
+
+.error {
+  color: #a52d2d;
+}
+
+.vacio {
+  color: #64736e;
+  padding-top: 18px;
+  text-align: center;
+}
+
+.oculto {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  .tabla-contenedor {
+    overflow-x: auto;
+  }
+}

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>Biblioteca El Saber</title>
+
+    <link
+      rel="stylesheet"
+      href="./assets/css/styles.css"
+    />
+  </head>
+
+  <body>
+    <main class="contenedor">
+      <header>
+        <p class="etiqueta">Biblioteca Comunitaria</p>
+
+        <h1>Catálogo El Saber</h1>
+
+        <p>
+          Administra los libros y autores almacenados en PostgreSQL.
+        </p>
+      </header>
+
+      <!-- Administración de autores -->
+      <section class="panel">
+        <h2 id="author-form-title">
+          Administrar autores
+        </h2>
+
+        <form
+          id="author-form"
+          class="formulario-autor"
+        >
+          <label>
+            Nombre del autor
+
+            <input
+              id="author-name"
+              name="nombre"
+              type="text"
+              maxlength="255"
+              placeholder="Ejemplo: Gabrielita Mistral"
+              required
+            />
+          </label>
+
+          <div class="acciones-formulario">
+            <button
+              id="author-submit-button"
+              type="submit"
+            >
+              Guardar autor
+            </button>
+
+            <button
+              id="author-cancel-button"
+              class="secundario oculto"
+              type="button"
+            >
+              Cancelar edición
+            </button>
+          </div>
+        </form>
+
+        <p
+          id="author-message"
+          class="mensaje"
+          role="status"
+          aria-live="polite"
+        ></p>
+
+        <div class="tabla-contenedor">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Autor</th>
+                <th>Libros</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+
+            <tbody id="authors-body"></tbody>
+          </table>
+        </div>
+
+        <p
+          id="authors-empty"
+          class="vacio oculto"
+        >
+          Todavía no hay autores registrados.
+        </p>
+      </section>
+
+      <!-- Administración de libros -->
+      <section class="panel">
+        <h2 id="form-title">
+          Agregar libro
+        </h2>
+
+        <form id="book-form">
+          <label>
+            Título
+
+            <input
+              id="titulo"
+              name="titulo"
+              type="text"
+              maxlength="255"
+              required
+            />
+          </label>
+
+          <label>
+            Autor
+
+            <select
+              id="autorId"
+              name="autorId"
+              required
+            >
+              <option value="">
+                Cargando autores...
+              </option>
+            </select>
+          </label>
+
+          <label>
+            Año de publicación (year)
+
+            <input
+              id="year"
+              name="year"
+              type="number"
+              step="1"
+              required
+            />
+          </label>
+
+          <label>
+            Portada (JPG, PNG o WEBP)
+
+            <input
+              id="portada"
+              name="portada"
+              type="file"
+              accept="image/jpeg,image/png,image/webp"
+              required
+            />
+          </label>
+
+          <div class="acciones-formulario">
+            <button
+              id="submit-button"
+              type="submit"
+            >
+              Guardar libro
+            </button>
+
+            <button
+              id="cancel-button"
+              class="secundario oculto"
+              type="button"
+            >
+              Cancelar edición
+            </button>
+          </div>
+        </form>
+
+        <p
+          id="message"
+          class="mensaje"
+          role="status"
+          aria-live="polite"
+        ></p>
+      </section>
+
+      <!-- Listado de libros -->
+      <section class="panel">
+        <div class="encabezado-lista">
+          <h2>Libros registrados</h2>
+
+          <button
+            id="reload-button"
+            class="secundario"
+            type="button"
+          >
+            Actualizar
+          </button>
+        </div>
+
+        <div class="tabla-contenedor">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Portada</th>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Year</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+
+            <tbody id="books-body"></tbody>
+          </table>
+        </div>
+
+        <p
+          id="empty-message"
+          class="vacio oculto"
+        >
+          Todavía no hay libros registrados.
+        </p>
+      </section>
+    </main>
+
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
